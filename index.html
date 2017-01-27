@@ -1,0 +1,345 @@
+<link href="https://fonts.googleapis.com/css?family=Damion|Kumar+One|Nunito|Orbitron|Permanent+Marker|Sorts+Mill+Goudy" rel="stylesheet">
+<style>
+body{
+  padding:0px;
+  margin:0px;
+}
+
+blockquote {
+  width:calc(100% - 200px);
+  margin:50px 100px;
+  font-size:35px;
+  font-family: "Sorts Mill Goudy", "Times";
+  color:#333;
+}
+
+blockquote:before{
+  content: '\201C';
+}
+
+blockquote > span{
+  float:right;
+  font-size:18px;
+}
+
+section[name="main"]{
+  width:100%;
+  height: 85vh;
+  background-image:url('http://media.ellentv.com/2014/09/18/091814-google-aso-blog-1200x630.jpg');
+  background-size:cover;
+  background-position: center;
+  position: relative;
+  display: inline-block;
+}
+
+section[name="main"] > nav{
+  width:100%;
+  right:0px;
+  top:0px;
+  position: absolute;
+  z-index:2;
+  color:white;
+  font-family: "Futura", "Lato";
+  font-size:11px;
+}
+
+section[name="main"] > nav > a{
+  color:white;
+  text-decoration: none;
+  float:right;
+  box-sizing: border-box;
+  display:inline-block;
+  margin:20px 1.125vw;
+  width:12vw;
+  text-align: center;
+}
+
+section[name="main"] > cite{
+  font-size:11px;
+  position: absolute;
+  bottom:5px;
+  right:5px;
+  color:white;
+  font-size:11px;
+  font-family: "Futura", "Lato";
+  z-index:2;
+  font-style: normal;
+  opacity:.6;
+}
+
+section[name="main"] > h1{
+  width:60%;
+  margin-left:20%;
+  margin-top:16vh;
+  font-size:60px;
+  text-align: center;
+  font-family:"Permanent Marker", "Kumar One", "Nunito", Helvetica;
+  color:white;
+  z-index:2;
+  position: relative;
+}
+
+section[name="main"] > h1 > span{
+  /*font-family: "Nunito";*/
+  font-size:80px;
+}
+
+section[name="main"] > h2{
+  width:60%;
+  margin-left:20%;
+  margin-top:1vh;
+  font-size:20px;
+  text-align: center;
+  font-family:"Futura", "Lato", "Permanent Marker", "Kumar One", "Nunito", Helvetica;
+  color:white;
+  z-index:2;
+  position: relative;
+}
+
+section[name="main"] > h3{
+  width:60%;
+  margin-left:20%;
+  margin-top:1vh;
+  font-size:14px;
+  text-align: center;
+  font-family:"Futura", "Lato", "Permanent Marker", "Kumar One", "Nunito", Helvetica;
+  color:white;
+  z-index:2;
+  position: relative;
+}
+
+section[name="main"] > h3 > a{
+  text-decoration: none;
+  color:#ddd;
+
+}
+
+section[name="main"]:before{
+  position: absolute;
+  content: '';
+  width:100%;
+  top:0px;
+  left:0px;
+  height: 85vh;
+  background-color: black;
+  opacity:.7;
+  z-index:1;
+}
+
+section[name="feature"]{
+  width:100%;
+  height: 300px;
+  background-size:cover;
+  background-position: center 20%;
+  position: relative;
+  display: inline-block;
+}
+
+section[name="feature"] > p{
+  width:20%;
+  margin-left:5%;
+  margin-top: 100px;
+  border-top:3px white solid;
+  border-bottom: 3px white solid;
+  padding: 10px 0px;
+  font-family:"Futura", "Lato", "Permanent Marker", "Kumar One", "Nunito", Helvetica;
+  color:white;
+}
+
+section[name="feature"] > p > a{
+  color: #ddd;
+  text-decoration: none;
+}
+
+section[name="resources"]{
+  width:100%;
+  height: auto;
+  background-color:#ddd;
+  display:inline-block;
+  padding-bottom: 5vw;
+}
+
+section[name="resources"] > .left{
+  width:44vw;
+  height:44vw;
+  margin:5vw;
+  margin-bottom:0px;
+  margin-right:0vw;
+  background-color:white;
+  box-shadow: 3px 3px #eee;
+  float:left;
+  display:inline-block;
+  box-sizing: border-box;
+}
+
+section[name="resources"] > .left > h1{
+  font-family:  "Permanent Marker", Helvetica;
+  font-size:67px;
+  color:#627594;
+  text-align: center;
+  margin-bottom:4px;
+  margin-top:10px;
+
+}
+
+section[name="resources"] > .left > p {
+  font-family:"Futura", "Lato", "Permanent Marker", "Kumar One", "Nunito", Helvetica;
+  color:#888;
+  font-size:15px;
+  width:80%;
+  margin-left:10%;
+  margin-right:10%;
+  text-align: justify;
+}
+
+
+section[name="resources"] > .right{
+  width:50vw;
+  height:50vw;
+  margin:0vw;
+  background-color:transparent;
+  float:left;
+  display:inline-block;
+  box-sizing: border-box;
+  padding-top:4vw;
+  padding-left:1vw;
+}
+
+section[name="resources"] > .all{
+  width:92vw;
+  margin-left:4vw;
+  margin-right:4vw;
+  margin-top:0vw;
+  float:left;
+}
+
+section[name="resources"] .box:before{
+  width:21vw;
+  height:21vw;
+  position: absolute;
+  background-color:black;
+  opacity:.6;
+  content: '';
+  left:0px;
+  right:0px;
+  z-index:1;
+}
+
+
+section[name="resources"] .box > h1{
+  width:70%;
+  margin-left:15%;
+  margin-top: 3vw;
+  border-top:3px #eee solid;
+  border-bottom: 3px #eee solid;
+  padding: 10px 0px;
+  font-family:"Futura", "Lato", "Permanent Marker", "Kumar One", "Nunito", Helvetica;
+  color:#eee;
+  font-size:16px;
+  z-index:2;
+  position:relative;
+}
+
+section[name="resources"] .box > p{
+  width:70%;
+  margin-left:15%;
+  margin-top: 3px;
+  color:white;
+  font-family:"Futura", "Lato", "Permanent Marker", "Kumar One", "Nunito", Helvetica;
+  font-size:12px;
+  z-index:2;
+  position:relative;
+}
+
+section[name="resources"] .box > p > span{
+  color:#CFCFE8;
+  cursor: pointer;
+}
+
+
+section[name="resources"] .box{
+  width:21vw;
+  margin:1vw;
+  height:21vw;
+  background-color:white;
+  box-shadow: 3px 3px #eee;
+  float:left;
+  display:inline-block;
+  box-sizing: border-box;
+  background-size:cover;
+  background-position: center;
+  position: relative;
+}
+
+</style>
+<body>
+<section name="main">
+  <nav>
+    <a>Deadlines to Know</a>
+    <a>Who is Sara Sakowitz?</a>
+    <a>The Startup Vocabulary</a>
+    <a>Campus Founders</a>
+    <a>Recommended Reads</a>
+    <a>The "Columbia Portfolio"</a>
+    <a>By the Numbers</a>
+  </nav>
+  <cite>Sara Sakowitz, Columbia '18: Founder of Blue Moon Box</cite>
+  <h1>So You Want to Start a <br><span>Start-Up?</span></h1>
+  <h2>COLUMBIA UNIVERSITY EDITION</h2>
+  <h3>A resource handcrafted by <a href="http://coreatcu.com">CORE</a></h3>
+</section>
+<blockquote>Columbia is ripe with resources for start-ups and has an active vibrant community unlike any other in New York City"<br>
+<span>- Simon Schwartz, President of Columbia Organization of Rising Entreprenuers 2015-2016</span>
+</blockquote>
+<section name="feature" style="background-image:url('https://dl.dropbox.com/s/yw5oiricj0n5iqg/20161203-demo_day_16-1138%20%281%29.jpg?dl=0')">
+  <p>
+    <span>MAYUR SAXENA</span> presents his venture, <a href="http://droicelabs.com/">Droice Labs</a>, at Demo Day 2016, Almaworks
+  </p>
+</section>
+<section name="resources">
+  <div class="left">
+    <h1>The Snapshot</h1>
+    <p>Columbia's resources for entreprenuership come from both the school's administration and various clubs found on campus.
+      From student led venture capital groups to the Columbia Venture Competition, Columbia's resources enable students to hit the ground running.
+      Because of this support, students have particular advantages that aren't as accessible otherwise.<br><br>
+      Change the World, we are watching.
+    </p>
+  </div>
+  <div class="right">
+    <div class="box" style="background-image:url('http://www.lusolabs.co/images/blog/blog_2.jpg')">
+      <h1>Columbia Venture Competition</h1>
+      <p>$25,000 in funding cannot hurt, can it? <span>Learn More</span></p>
+    </div>
+    <div class="box" style="background-image:url('https://dl.dropbox.com/s/84jburpzyffiwn3/20161203-demo_day_16-1173.jpg?dl=0')">
+      <h1>AlmaWorks</h1>
+      <p>8 Weeks Fall Semester, 30 Mentors, the ideal college Accelerator <span>Learn More</span></p>
+    </div>
+    <div class="box" style="background-image:url('https://dl.dropbox.com/s/nws99auf9mnqgt1/Columbia_042810_1043.jpg?dl=0')">
+      <h1>Ignition Grants and Innovation Grants</h1>
+      <p>From $5,000 to $50,000, money to get you blasting off from 0 to 100 <span>Learn More</span></p>
+    </div>
+    <div class="box" style="background-image:url('http://engineering.columbia.edu/files/engineering/tunisia-entrepreneurship.png')">
+      <h1>IE@Columbia</h1>
+      <p>A platform of entreprenuerial insight by Columbia Business School. <span>Learn More</span></p>
+    </div>
+  </div>
+  <div class="all">
+    <div class="box" style="background-image:url('https://dl.dropbox.com/s/48ufwmvwbk8h6f2/10506590_812972225433045_1955344794775040458_o.jpg?dl=0')">
+      <h1>CORE Focus</h1>
+      <p>Columbia Beta-Testers for your product, on demand. <span>Learn More</span></p>
+    </div>
+    <div class="box" style="background-image:url('http://engineering.columbia.edu/files/engineering/tunisia-entrepreneurship.png')">
+      <h1>DORM ROOM FUND @CU</h1>
+      <p>Columbia has produced Dorm Room Fund investors to help you fund your project. <span>Learn More</span></p>
+    </div>
+    <div class="box" style="background-image:url('https://dl.dropbox.com/s/9441dzpitoj42bd/CtfVMN0XYAAzrjC.jpg?dl=0')">
+      <h1>ROUGH DRAFT VENTURES @CU</h1>
+      <p>Columbia undergraduates pioneered the opening of Rough Draft's NYC branch. <span>Learn More</span></p>
+    </div>
+    <div class="box" style="background-image:url('https://dl.dropbox.com/s/f2qzxdk7udyrsez/Screen%20Shot%202017-01-26%20at%2011.22.55%20PM.png?dl=0')">
+      <h1>Res. Inc</h1>
+      <p>A dorm room incubator geared towards teaching undergraduates the fundamentals of Entreprenuership. <span>Learn More</span></p>
+    </div>
+  </div>
+</section>
+</body>
