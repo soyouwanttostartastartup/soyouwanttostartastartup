@@ -268,3 +268,56 @@ section[name="resources"] .box{
   background-position: center;
   position: relative;
 }
+
+section[name="options"]{
+  width:100%;
+  display:inline-block;
+}
+section[name="options"] > h1{
+  width:30%;
+  margin-left:35%;
+  margin-right:35%;
+  font-family: "Futura", "Lato";
+  font-size:16px;
+
+  margin-top:30px;
+  margin-bottom:30px;
+  text-align: center;
+}
+
+section[name="options"] > div.option{
+  width:50%;
+  border-top:1px #ddd solid;
+  border-bottom: 1px #ddd solid;
+  box-sizing: border-box;
+  float:left;
+  height:300px;
+  text-align: center;
+
+}
+
+section[name="options"] > div.option:hover{
+  background-color:black;
+  color:white;
+  cursor: pointer;
+}
+
+section[name="options"] > div.option > img{
+  margin-top:30px;
+  height:130px;
+}
+
+section[name="options"] > div.option > h1{
+  width:100%;
+  text-align: center;
+  font-family: "Futura", "Lato";
+
+}
+
+section[name="options"] > div.option > p{
+  width:50%;
+  margin-left:25%;
+  font-family: "Futura", "Sorts Mill Goudy", "Times";
+  font-size:13px;
+  text-align: center;
+}
