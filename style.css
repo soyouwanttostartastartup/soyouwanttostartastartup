@@ -1,3 +1,8 @@
+/*
+does ie give money?
+is it now a 30K cap?
+lean launchpad for everyrone? 
+*/
 body{
   padding:0px;
   margin:0px;
@@ -42,6 +47,38 @@ section[name="main"] > nav{
 }
 
 section[name="main"] > nav > a{
+  color:white;
+  text-decoration: none;
+  float:right;
+  box-sizing: border-box;
+  display:inline-block;
+  margin:20px 1.125vw;
+  width:12vw;
+  text-align: center;
+}
+
+section[name="generic"]{
+  width:100%;
+  height: 60px;
+  background-size:cover;
+  background-position: center;
+  position: relative;
+  background-color:#52AEFB;
+  display: inline-block;
+}
+
+section[name="generic"] > nav{
+  width:100%;
+  right:0px;
+  top:0px;
+  position: absolute;
+  z-index:2;
+  color:white;
+  font-family: "Futura", "Lato";
+  font-size:11px;
+}
+
+section[name="generic"] > nav > a{
   color:white;
   text-decoration: none;
   float:right;
@@ -213,7 +250,7 @@ section[name="resources"] > .all{
 
 section[name="resources"] .box:before{
   width:21vw;
-  height:21vw;
+  height:19vw;
   position: absolute;
   background-color:black;
   opacity:.6;
@@ -227,7 +264,7 @@ section[name="resources"] .box:before{
 section[name="resources"] .box > h1{
   width:70%;
   margin-left:15%;
-  margin-top: 3vw;
+  margin-top: 2vw;
   border-top:3px #eee solid;
   border-bottom: 3px #eee solid;
   padding: 10px 0px;
@@ -235,18 +272,20 @@ section[name="resources"] .box > h1{
   color:#eee;
   font-size:16px;
   z-index:2;
+  height:3vw;
   position:relative;
 }
 
 section[name="resources"] .box > p{
   width:70%;
   margin-left:15%;
-  margin-top: 3px;
+  margin-top: 1vw;
   color:white;
   font-family:"Futura", "Lato", "Permanent Marker", "Kumar One", "Nunito", Helvetica;
   font-size:12px;
   z-index:2;
   position:relative;
+  height:10vw;
 }
 
 section[name="resources"] .box > p > span{
@@ -258,9 +297,8 @@ section[name="resources"] .box > p > span{
 section[name="resources"] .box{
   width:21vw;
   margin:1vw;
-  height:21vw;
+  min-height:21vw;
   background-color:white;
-  box-shadow: 3px 3px #eee;
   float:left;
   display:inline-block;
   box-sizing: border-box;
@@ -268,6 +306,29 @@ section[name="resources"] .box{
   background-position: center;
   position: relative;
 }
+
+section[name="resources"] .box > .bar{
+  width:100%;
+  min-height:3vw;
+  background-color:white;
+  display: inline-block;
+  padding:1vw;
+  box-sizing: border-box;
+}
+
+section[name="resources"] .box > .bar > span{
+  padding:4px;
+  background-color:#52AEFB;
+  color:white;
+  font-family: "Futura", "Lato";
+  font-size:12px;
+  border-radius:100px;
+  margin-right:4px;
+  display: inline-block;
+  float:left;
+
+}
+
 
 section[name="options"]{
   width:100%;
@@ -285,7 +346,7 @@ section[name="options"] > h1{
   text-align: center;
 }
 
-section[name="options"] > div.option{
+section[name="options"] > a.option{
   width:50%;
   border-top:1px #ddd solid;
   border-bottom: 1px #ddd solid;
@@ -293,31 +354,133 @@ section[name="options"] > div.option{
   float:left;
   height:300px;
   text-align: center;
-
+  color:black;
+  text-decoration: none;
 }
 
-section[name="options"] > div.option:hover{
+section[name="options"] > a.option:hover{
   background-color:black;
-  color:white;
+  color:white !important;
   cursor: pointer;
 }
 
-section[name="options"] > div.option > img{
+section[name="options"] > a.option > img{
   margin-top:30px;
   height:130px;
 }
 
-section[name="options"] > div.option > h1{
+section[name="options"] > a.option > h1{
   width:100%;
   text-align: center;
   font-family: "Futura", "Lato";
-
+  text-decoration: none;
 }
 
-section[name="options"] > div.option > p{
+section[name="options"] > a.option > p{
   width:50%;
   margin-left:25%;
   font-family: "Futura", "Sorts Mill Goudy", "Times";
   font-size:13px;
   text-align: center;
+  text-decoration: none;
+}
+
+section[name="resources_info"]{
+  width:calc(100vw - 40px);
+  margin:20px;
+  min-height:20vh;
+  background-color:white;
+  box-shadow: 1px 1px #ddd;
+  display: inline-block;
+  text-align: center;
+  padding-bottom:20px;
+  margin-bottom:0px;
+}
+
+section[name="resources_info"] > h1{
+  border-top:3px #52AEFb solid;
+  border-bottom: 3px #52AEFB solid;
+  padding-top:4px;
+  padding-bottom:4px;
+  color:#52AEFB;
+  margin:0px;
+  margin:6px;
+  margin-top:16px;
+  font-size:25px;
+  width:auto;
+  display:inline-block;
+  font-family: "Futura", "Sorts Mill Goudy", "Times";
+}
+
+section[name="resources_info"] > p{
+  width:60%;
+  margin-left:20%;
+  font-size:14px;
+  font-family: "Futura", "Sorts Mill Goudy", "Times";
+  color:#888;
+  text-align: left;
+}
+
+div.powerbar{
+  width:calc(100vw - 40px);
+  margin:20px;
+  margin-top:0px;
+  background-color:white;
+  box-shadow: 1px 1px #ddd;
+  display: inline-block;
+  text-align: center;
+  height:60px;
+  background-color:white;
+  border-top:1px #ddd solid;
+  font-family: "Futura", "Sorts Mill Goudy", "Times";
+}
+
+div.powerbar > .block{
+  width:auto;
+  padding-left:10px;
+  padding-right:10px;
+  border-right:1px #ddd solid;
+  height: 60px;
+  float:left;
+  display:inline-block;
+}
+
+div.powerbar > .block > p{
+  font-size:14px;
+  float:left;
+  padding:4px;
+  display:inline-block;
+}
+
+div.powerbar > .block > div.checkbox{
+  height:17px;
+  width:17px;
+  border:3px #ddd solid;
+  border-radius:3px;
+  float:left;
+  margin: 18px 4px;
+  line-height: 14.5px;
+  display:inline-block;
+  cursor: pointer;
+}
+
+div.powerbar > .block > div.checkbox + div {
+  height:17px;
+  float:left;
+  margin: 22px 4px;
+  margin-right:10px;
+  width:auto;
+  font-size:12px;
+  color:#666;
+  display:inline-block;
+}
+
+div.powerbar > .block > div.checkbox.chosen{
+  border-color:#52AEFb;
+}
+
+div.powerbar > .block > div.checkbox.chosen:before{
+  content: '\2713';
+  color:#52AEFB;
+  font-size:18px;
 }

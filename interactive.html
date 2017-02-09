@@ -1,0 +1,332 @@
+<script src="vue.js"></script>
+<link href="style.css" rel="stylesheet">
+<body style="background-color:#ddd;">
+<section name="generic">
+  <nav>
+    <a>Deadlines to Know</a>
+    <a>Who is Sara Sakowitz?</a>
+    <a>The Startup Vocabulary</a>
+    <a>Campus Founders</a>
+    <a>Recommended Reads</a>
+    <a>The "Columbia Portfolio"</a>
+    <a>By the Numbers</a>
+  </nav>
+</section>
+<div id="CORE">
+<section name="resources_info">
+  <h1>Navigating Columbia's Resources for your Project</h1>
+  <p>Whether you work in the lab with chemicals or store your work in a folder on your laptop, Columbia
+  has resources, competitions, and programs designed to help you scale from 1 to a 100, and 100 to a million.
+  Explore programs below and use the appropriate tools to filter your search.</p>
+</section>
+<div class="powerbar">
+  <div class="block">
+    <p>Sort By: </p>
+    <div class="checkbox chosen"></div>
+    <div>Due Date</div>
+
+    <div class="checkbox"></div>
+    <div>Award Size</div>
+  </div>
+
+  <div class="block">
+    <p>Available To: </p>
+    <div class="checkbox" v-bind:class="{'chosen' : CC }" v-on:click="CC = !CC"></div>
+    <div>College</div>
+
+    <div class="checkbox" v-bind:class="{'chosen' : SEAS }" v-on:click="SEAS = !SEAS"></div>
+    <div>SEAS</div>
+
+    <div class="checkbox" v-bind:class="{'chosen' : GS }" v-on:click="GS = !GS"></div>
+    <div>General School</div>
+
+    <div class="checkbox" v-bind:class="{'chosen' : Barnard }" v-on:click="Barnard = !Barnard"></div>
+    <div>Barnard</div>
+  </div>
+
+  <div class="block">
+    <p>Show: </p>
+    <div class="checkbox" v-bind:class="{'chosen' : accelerators }" v-on:click="accelerators = !accelerators"></div>
+    <div>Accelerators</div>
+
+    <div class="checkbox" v-bind:class="{'chosen' : funding }" v-on:click="funding = !funding"></div>
+    <div>Funding</div>
+
+    <div class="checkbox" v-bind:class="{'chosen' : mentorship }" v-on:click="mentorship = !mentorship"></div>
+    <div>Mentorship</div>
+
+    <div class="checkbox" v-bind:class="{'chosen' : tools }" v-on:click="tools = !tools"></div>
+    <div>Tools</div>
+
+  </div>
+
+</div>
+<section name="resources">
+  <div class="all">
+    <div class="box" v-if="pass(item)" v-for="item in items"
+    v-bind:style="{ backgroundImage: 'url(' + item.url + ')' }"
+    >
+      <h1>{{item.name}}</h1>
+      <p>{{item.description}} <span>Learn More</span></p>
+      <div class="bar">
+        <span v-for="school in item.available">{{school}}</span>
+        <span v-if="item.money > 0" style="background-color:#ff6632;">${{item.money}}</span>
+      </div>
+    </div>
+
+    <div style="opacity:.3;" class="box" v-if="!pass(item)" v-for="item in items"
+    v-bind:style="{ backgroundImage: 'url(' + item.url + ')' }"
+    >
+      <h1>{{item.name}}</h1>
+      <p>{{item.description}} <span>Learn More</span></p>
+      <div class="bar">
+        <span v-for="school in item.available">{{school}}</span>
+        <span v-if="item.money > 0" style="background-color:#ff6632;">${{item.money}}</span>
+      </div>
+    </div>
+
+
+
+
+
+
+  </div>
+</section>
+</div>
+
+
+<script>
+CORE = new Vue({
+  el: '#CORE',
+  data: {
+    SEAS: true,
+    CC: true,
+    GS: true,
+    Barnard: true,
+    accelerators: true,
+    funding: true,
+    mentorship: true,
+    tools: true,
+    items: [
+      {
+        "url" : "http://www.lusolabs.co/images/blog/blog_2.jpg",
+        "name" : "Columbia Venture Competition",
+        "description" : "$25,000 in funding cannot hurt, can it?",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : false,
+        "funding" : true,
+        "mentorship" : false,
+        "money" : 25000,
+        "tools" : false
+      },
+      {
+        "url" : "https://dl.dropbox.com/s/84jburpzyffiwn3/20161203-demo_day_16-1173.jpg?dl=0",
+        "name" : "AlmaWorks",
+        "description" : "8 Weeks Fall Semester, 30 Mentors, the ideal college accelerator",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : true,
+        "funding" : false,
+        "mentorship" : false,
+        "money" : 0,
+        "tools" : true
+      },
+      {
+        "url" : "https://dl.dropbox.com/s/nws99auf9mnqgt1/Columbia_042810_1043.jpg?dl=0",
+        "name" : "Ignition Grants",
+        "description" : "From $5,000 to $50,000, money to get you blasting off from 0 to 100",
+        "available" : ["Engineering"],
+        "accelerator" : false,
+        "funding" : true,
+        "mentorship" : false,
+        "money" : 50000,
+        "tools" : false
+      },
+      {
+        "url" : "https://dl.dropbox.com/s/nws99auf9mnqgt1/Columbia_042810_1043.jpg?dl=0",
+        "name" : "Innovation Grants",
+        "description" : "From $5,000 to $50,000, money to get you blasting off from 0 to 100",
+        "available" : ["College", "General School"],
+        "accelerator" : false,
+        "funding" : true,
+        "mentorship" : false,
+        "money" : 50000,
+        "tools" : false
+      },
+      {
+        "url" : "http://engineering.columbia.edu/files/engineering/tunisia-entrepreneurship.png",
+        "name" : "IE@Columbia",
+        "description" : "A platform of entreprenuerial insight by Columbia Business School",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : true,
+        "funding" : false,
+        "mentorship" : true,
+        "money" : 0,
+        "tools" : true
+      },
+      {
+        "url" : "https://dl.dropbox.com/s/48ufwmvwbk8h6f2/10506590_812972225433045_1955344794775040458_o.jpg?dl=0",
+        "name" : "CORE Focus",
+        "description" : "Columbia Beta-Testers for your product, on demand.",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : false,
+        "funding" : false,
+        "mentorship" : false,
+        "money" : 0,
+        "tools" : true
+      },
+      {
+        "url" : "http://engineering.columbia.edu/files/engineering/tunisia-entrepreneurship.png",
+        "name" : "DORM ROOM FUND @CU",
+        "description" : "Columbia has produced Dorm Room Fund investors to help you fund your project.",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : false,
+        "funding" : true,
+        "mentorship" : true,
+        "money" : 20000,
+        "tools" : true
+
+      },
+      {
+        "url" : "https://dl.dropbox.com/s/9441dzpitoj42bd/CtfVMN0XYAAzrjC.jpg?dl=0",
+        "name" : "ROUGH DRAFT VENTURES @CU",
+        "description" : "Columbia undergraduates pioneered the opening of Rough Draft's NYC branch.",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : false,
+        "funding" : true,
+        "mentorship" : true,
+        "money" : 25000,
+        "tools" : true
+      },
+      {
+        "url" : "https://dl.dropbox.com/s/f2qzxdk7udyrsez/Screen%20Shot%202017-01-26%20at%2011.22.55%20PM.png?dl=0",
+        "name" : "Res. Inc",
+        "description" : "A dorm room incubator geared towards teaching undergraduates the fundamentals of Entreprenuership.",
+        "available" : ["College", "Engineering"],
+        "accelerator" : false,
+        "funding" : false,
+        "mentorship" : true,
+        "money" : 0,
+        "tools" : true
+      },
+      {
+        "url" : "https://i.vimeocdn.com/video/491383374.jpg?mw=1920&mh=1080&q=70",
+        "name" : "Columbia Startup Lab",
+        "description" : "Columbia's office space located in SoHo for price effective HQ space.",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : false,
+        "funding" : false,
+        "mentorship" : false,
+        "money" : 0,
+        "tools" : true
+      },
+      {
+        "url" : "http://www.incimages.com/uploaded_files/image/970x450/SteveBlank_IdeaLab_2_Pano_40031.jpg",
+        "name" : "The Lean Launchpad by Steve Blank",
+        "description" : "Lean Launchpad is a business school class at Columbia taught by Steve Blank. Undergrads may register with permission.",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : true,
+        "funding" : false,
+        "mentorship" : true,
+        "money" : 0,
+        "tools" : true
+      },
+      {
+        "url" : "https://www.nycedc.com/sites/default/files/filemanager/Blog/Harlem_Biospace/Hb-blog.jpg",
+        "name" : "Harlem Biospace",
+        "description" : "An affordable co-working wet lab, right in Manhattan.",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : true,
+        "funding" : false,
+        "mentorship" : false,
+        "money" : 0,
+        "tools" : true
+      },
+      {
+        "url" : "https://static1.squarespace.com/static/54451b15e4b0cf00d1a77918/t/5588310de4b04e63446509e4/1436200782248/?format=1500w",
+        "name" : "Columbia-Coulter Translational Partnership",
+        "description" : "Selected teams receive funding, advice, and guidance to help advance promising biomedical technologies from conception to proof-of-concept.",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : true,
+        "funding" : true,
+        "mentorship" : true,
+        "money" : 190000,
+        "tools" : true
+      },
+      {
+        "url" : "https://tctechcrunch2011.files.wordpress.com/2016/08/2team_techcrunch.png",
+        "name" : "Pear VC",
+        "description" : "Pear’s mission is to provide founders with the support required to create the next wave of legacy companies.",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : true,
+        "funding" : true,
+        "mentorship" : true,
+        "money" : 40000,
+        "tools" : true
+      },
+      {
+        "url" : "https://pbs.twimg.com/media/CTftHFsWwAAcgE6.jpg",
+        "name" : "Columbia Makerspace",
+        "description" : "The Columbia Makerspace is a place for the Columbia community to build physical prototypes.",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : false,
+        "funding" : false,
+        "mentorship" : false,
+        "money" : 0,
+        "tools" : true
+      },
+      {
+        "url" : "http://www8.gsb.columbia.edu/entrepreneurship/sites/entrepreneurship/files/images/columbiaDesignStudio.jpg",
+        "name" : "Columbia Design Studio",
+        "description" : "The Design Studio teaches students, alumni and faculty customer-centric methodologies for developing innovative, and practice.",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : false,
+        "funding" : false,
+        "mentorship" : true,
+        "money" : 0,
+        "tools" : true
+      }
+
+
+    ]
+  },
+  methods: {
+    pass: function(item) {
+      if(item.available[0] != "All Columbia Schools") {
+        if(this.SEAS){
+          if(item.available.indexOf('Engineering') == -1){
+            return false;
+          }
+        }
+        if(this.GS){
+          if(item.available.indexOf('General School') == -1){
+            return false;
+          }
+        }
+        if(this.CC){
+          if(item.available.indexOf('College') == -1){
+            return false;
+          }
+        }
+        if(this.Barnard){
+          if(item.available.indexOf('Barnard') == -1){
+            return false;
+          }
+        }
+      }
+
+      if(this.accelerators == true && item.accelerator == true){
+        return true;
+      }
+      if(this.funding == true && item.funding == true){
+        return true;
+      }
+      if(this.mentorship == true && item.mentorship == true){
+        return true;
+      }
+
+      return false;
+    }
+  }
+});
+</script>
+</body>
