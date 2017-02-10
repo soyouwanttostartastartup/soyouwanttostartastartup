@@ -20,14 +20,7 @@
   Explore programs below and use the appropriate tools to filter your search.</p>
 </section>
 <div class="powerbar">
-  <div class="block">
-    <p>Sort By: </p>
-    <div class="checkbox chosen"></div>
-    <div>Due Date</div>
 
-    <div class="checkbox"></div>
-    <div>Award Size</div>
-  </div>
 
   <div class="block">
     <p>Available To: </p>
@@ -71,6 +64,7 @@
       <div class="bar">
         <span v-for="school in item.available">{{school}}</span>
         <span v-if="item.money > 0" style="background-color:#ff6632;">${{item.money}}</span>
+        <span v-if="item.credit > 0" style="background-color:lavender;">${{item.credit}} Credit</span>
       </div>
     </div>
 
@@ -82,6 +76,7 @@
       <div class="bar">
         <span v-for="school in item.available">{{school}}</span>
         <span v-if="item.money > 0" style="background-color:#ff6632;">${{item.money}}</span>
+        <span v-if="item.credit > 0" style="background-color:lavender;">${{item.credit}} Credit</span>
       </div>
     </div>
 
@@ -184,7 +179,6 @@ CORE = new Vue({
         "mentorship" : true,
         "money" : 20000,
         "tools" : true
-
       },
       {
         "url" : "https://dl.dropbox.com/s/9441dzpitoj42bd/CtfVMN0XYAAzrjC.jpg?dl=0",
@@ -195,7 +189,9 @@ CORE = new Vue({
         "funding" : true,
         "mentorship" : true,
         "money" : 25000,
-        "tools" : true
+        "tools" : true,
+        "credit" : 100000
+
       },
       {
         "url" : "https://dl.dropbox.com/s/f2qzxdk7udyrsez/Screen%20Shot%202017-01-26%20at%2011.22.55%20PM.png?dl=0",
@@ -283,6 +279,51 @@ CORE = new Vue({
         "funding" : false,
         "mentorship" : true,
         "money" : 0,
+        "tools" : true
+      },
+      {
+        "url" : "http://entrepreneurship.columbia.edu/wp-content/uploads/2013/07/tech2.png",
+        "name" : "CTV Executive Advisors Network",
+        "description" : "CTV XAN provide mentorship, networking, and marketing and investing advice to promising CTV startups, entrepreneurs and inventors. ",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : false,
+        "funding" : false,
+        "mentorship" : true,
+        "money" : 0,
+        "tools" : false
+      },
+      {
+        "url" : "http://entrepreneurship.columbia.edu/wp-content/uploads/2013/07/tech2.png",
+        "name" : "CTV Executives in Residence",
+        "description" : "Connects Columbia inventors and technologies with seasoned industry executives, venture capitalists, and serial entrepreneurs. ",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : false,
+        "funding" : false,
+        "mentorship" : true,
+        "money" : 0,
+        "tools" : false
+      },
+      {
+        "url" : "http://engineering.columbia.edu/files/engineering/fastpitch2014-425.jpg",
+        "name" : "FastPitch",
+        "description" : "Columbia Engineering's annual elevator pitch competition where teams have 60 seconds to sell their business ideas to a panel of judges. ",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : false,
+        "funding" : true,
+        "mentorship" : false,
+        "money" : 2000,
+        "tools" : false
+      },
+      {
+        "url" : "https://d0.awsstatic.com/video-thumbs/dynamodb/AWS-online-games-wide.png",
+        "name" : "AWS Activate X ESC",
+        "description" : "Amazon.com Web Services (AWS) and SEAS Entrepreneurship have partnered to provide students, staff, and faculty interested in starting web-based business ventures free tools to do so. ",
+        "available" : ["All Columbia Schools"],
+        "accelerator" : false,
+        "funding" : false,
+        "mentorship" : false,
+        "money" : 0,
+        "credit" : 1000,
         "tools" : true
       }
 

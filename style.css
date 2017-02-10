@@ -1,7 +1,7 @@
 /*
 does ie give money?
 is it now a 30K cap?
-lean launchpad for everyrone? 
+lean launchpad for everyrone?
 */
 body{
   padding:0px;
@@ -309,7 +309,7 @@ section[name="resources"] .box{
 
 section[name="resources"] .box > .bar{
   width:100%;
-  min-height:3vw;
+  min-height:6.8vw;
   background-color:white;
   display: inline-block;
   padding:1vw;
@@ -325,6 +325,7 @@ section[name="resources"] .box > .bar > span{
   border-radius:100px;
   margin-right:4px;
   display: inline-block;
+  margin-bottom:6px;
   float:left;
 
 }
@@ -383,6 +384,35 @@ section[name="options"] > a.option > p{
   font-size:13px;
   text-align: center;
   text-decoration: none;
+}
+section[name="courses"]{
+  width:calc(100vw - 40px);
+  margin:20px;
+  min-height:20vh;
+  background-color:white;
+  box-shadow: 1px 1px #ddd;
+  display: inline-block;
+  text-align: center;
+  padding-bottom:20px;
+  margin-bottom:0px;
+  font-family: "Futura", "Lato";
+}
+
+section[name="courses"] > h1{
+  font-size:16px;
+  color:#52AEFB;
+}
+
+section[name="courses"] > p{
+  width:40%;
+  margin-left:30%;
+  text-align: left;
+}
+
+section[name="courses"] > p > span{
+  width:70px;
+  color:#888;
+  display: inline-block;
 }
 
 section[name="resources_info"]{
