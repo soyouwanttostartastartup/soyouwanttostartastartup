@@ -1,0 +1,154 @@
+<script src="vue.js"></script>
+<link href="style.css" rel="stylesheet">
+<body style="background-color:#ddd;">
+<section name="generic">
+  <nav>
+    <a>Deadlines to Know</a>
+    <a>The Startup Vocabulary</a>
+    <a>Campus Founders</a>
+    <a>Recommended Reads</a>
+    <a>The "Columbia Portfolio"</a>
+    <a>By the Numbers</a>
+  </nav>
+</section>
+<div id="CORE">
+<section name="resources_info">
+  <h1>Student Founders at Columbia</h1>
+  <p>This list of student founders sprawls many age groups and industries, with some companies still running and
+  others retired with their place in history. Some have graduated and are working on their venture full time.
+  Others are still taking classes at Columbia. Each is open to be reached over email if you have any questions for them,
+want to hear directly from a founder, or maybe want to do business with them. </p>
+</section>
+<div class="powerbar">
+
+
+  <div class="block">
+    <p>Colleges: </p>
+    <div class="checkbox" v-bind:class="{'chosen' : CC }" v-on:click="CC = !CC"></div>
+    <div>College</div>
+
+    <div class="checkbox" v-bind:class="{'chosen' : SEAS }" v-on:click="SEAS = !SEAS"></div>
+    <div>SEAS</div>
+
+    <div class="checkbox" v-bind:class="{'chosen' : GS }" v-on:click="GS = !GS"></div>
+    <div>General School</div>
+
+    <div class="checkbox" v-bind:class="{'chosen' : Barnard }" v-on:click="Barnard = !Barnard"></div>
+    <div>Barnard</div>
+
+    <div class="checkbox" v-bind:class="{'chosen' : Graduate }" v-on:click="Graduate = !Graduate"></div>
+    <div>Graduate School</div>
+
+    <div class="checkbox" v-bind:class="{'chosen' : Graduated }" v-on:click="Graduated = !Graduated"></div>
+    <div>Graduated</div>
+  </div>
+
+  <div class="block">
+    <p>Show: </p>
+    <div class="checkbox" v-bind:class="{'chosen' : inaction }" v-on:click="inaction = !inaction"></div>
+    <div>In Action</div>
+
+    <div class="checkbox" v-bind:class="{'chosen' : retired }" v-on:click="retired = !retired"></div>
+    <div>Retired</div>
+
+
+
+
+  </div>
+
+</div>
+<section name="resources">
+  <div class="all">
+    <div class="box lighter" v-if="pass(item)" v-for="item in items"
+    v-bind:style="{ backgroundImage: 'url(' + item.url + ')' }"
+    >
+      <h1>{{item.name}}</h1>
+      <p>{{item.description}} <span>Email</span></p>
+    </div>
+
+    <div style="opacity:.3;" class="box" v-if="!pass(item)" v-for="item in items"
+    v-bind:style="{ backgroundImage: 'url(' + item.url + ')' }"
+    >
+      <h1>{{item.name}}</h1>
+      <p>{{item.description}} <span>Learn More</span></p>
+
+    </div>
+
+
+
+
+
+
+  </div>
+</section>
+</div>
+
+
+<script>
+CORE = new Vue({
+  el: '#CORE',
+  data: {
+    SEAS: true,
+    CC: true,
+    GS: true,
+    Barnard: true,
+    Graduate: true,
+    Graduated: true,
+    retired: true,
+    inaction: true,
+    items: [
+      {
+        "url" : "http://media.ellentv.com/2014/09/18/091814-google-aso-blog-1200x630.jpg",
+        "name" : "Sara Sakowitz",
+        "description" : "CEO and Founder of Blue Moon Box",
+        "available" : ["College"],
+        "inaction" : true
+      },
+      {
+        "url" : "https://dl.dropbox.com/s/yw5oiricj0n5iqg/20161203-demo_day_16-1138%20%281%29.jpg?dl=0",
+        "name" : "Mayur Saxena",
+        "description" : "CEO and Founder of Droice Labs",
+        "available" : ["Graduate"],
+        "inaction" : true
+      },
+      {
+        "url" : "simon.jpg",
+        "name" : "Simon Schwartz",
+        "description" : "CEO and Founder of Locasaur",
+        "available" : ["College"],
+        "inaction" : true
+      },
+      {
+        "url" : "mathew.png",
+        "name" : "Mathew Pregasen",
+        "description" : "CEO and Founder of Parsegon",
+        "available" : ["SEAS"],
+        "inaction" : true
+      },
+      {
+        "url" : "mathew.png",
+        "name" : "Connor Lin",
+        "description" : "CEO and Founder of Parsegon",
+        "available" : ["SEAS"],
+        "inaction" : true
+      }
+
+    ]
+  },
+  methods: {
+    pass: function(item) {
+
+
+      if(this.retired == true && item.retired == true){
+        return true;
+      }
+      if(this.inaction == true && item.inaction == true){
+        return true;
+      }
+
+      return false;
+    }
+  }
+});
+</script>
+</body>

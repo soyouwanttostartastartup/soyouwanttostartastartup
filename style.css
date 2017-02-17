@@ -260,6 +260,18 @@ section[name="resources"] .box:before{
   z-index:1;
 }
 
+section[name="resources"] .box.lighter:before{
+  width:21vw;
+  height:21vw;
+  position: absolute;
+  background-color:black;
+  opacity:.3;
+  content: '';
+  left:0px;
+  right:0px;
+  z-index:1;
+}
+
 
 section[name="resources"] .box > h1{
   width:70%;
@@ -306,6 +318,7 @@ section[name="resources"] .box{
   background-position: center;
   position: relative;
 }
+
 
 section[name="resources"] .box > .bar{
   width:100%;

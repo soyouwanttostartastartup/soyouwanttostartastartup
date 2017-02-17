@@ -4,7 +4,6 @@
 <section name="generic">
   <nav>
     <a>Deadlines to Know</a>
-    <a>Who is Sara Sakowitz?</a>
     <a>The Startup Vocabulary</a>
     <a>Campus Founders</a>
     <a>Recommended Reads</a>
@@ -22,34 +21,23 @@
 <div class="powerbar">
 
 
-  <div class="block">
-    <p>Available To: </p>
-    <div class="checkbox" v-bind:class="{'chosen' : CC }" v-on:click="CC = !CC"></div>
-    <div>College</div>
-
-    <div class="checkbox" v-bind:class="{'chosen' : SEAS }" v-on:click="SEAS = !SEAS"></div>
-    <div>SEAS</div>
-
-    <div class="checkbox" v-bind:class="{'chosen' : GS }" v-on:click="GS = !GS"></div>
-    <div>General School</div>
-
-    <div class="checkbox" v-bind:class="{'chosen' : Barnard }" v-on:click="Barnard = !Barnard"></div>
-    <div>Barnard</div>
-  </div>
 
   <div class="block">
     <p>Show: </p>
-    <div class="checkbox" v-bind:class="{'chosen' : accelerators }" v-on:click="accelerators = !accelerators"></div>
+    <div class="checkbox" v-bind:class="{'chosen' : choice == 'accelerator' && !all}" v-on:click="choice = 'accelerator', all = false"></div>
     <div>Accelerators</div>
 
-    <div class="checkbox" v-bind:class="{'chosen' : funding }" v-on:click="funding = !funding"></div>
+    <div class="checkbox" v-bind:class="{'chosen' : choice == 'funding' && !all}" v-on:click="choice = 'funding', all = false"></div>
     <div>Funding</div>
 
-    <div class="checkbox" v-bind:class="{'chosen' : mentorship }" v-on:click="mentorship = !mentorship"></div>
+    <div class="checkbox" v-bind:class="{'chosen' : choice == 'mentorship' && !all}" v-on:click="choice = 'mentorship', all = false"></div>
     <div>Mentorship</div>
 
-    <div class="checkbox" v-bind:class="{'chosen' : tools }" v-on:click="tools = !tools"></div>
+    <div class="checkbox" v-bind:class="{'chosen' : choice == 'tools' && !all}" v-on:click="choice = 'tools', all = false"></div>
     <div>Tools</div>
+
+    <div class="checkbox" v-bind:class="{'chosen' : all }" v-on:click="all = !all"></div>
+    <div>All Items</div>
 
   </div>
 
@@ -94,14 +82,8 @@
 CORE = new Vue({
   el: '#CORE',
   data: {
-    SEAS: true,
-    CC: true,
-    GS: true,
-    Barnard: true,
-    accelerators: true,
-    funding: true,
-    mentorship: true,
-    tools: true,
+    choice: 'tools',
+    all: true,
     items: [
       {
         "url" : "http://www.lusolabs.co/images/blog/blog_2.jpg",
@@ -318,7 +300,7 @@ CORE = new Vue({
         "url" : "https://d0.awsstatic.com/video-thumbs/dynamodb/AWS-online-games-wide.png",
         "name" : "AWS Activate X ESC",
         "description" : "Amazon.com Web Services (AWS) and SEAS Entrepreneurship have partnered to provide students, staff, and faculty interested in starting web-based business ventures free tools to do so. ",
-        "available" : ["All Columbia Schools"],
+        "available" : ["SEAS"],
         "accelerator" : false,
         "funding" : false,
         "mentorship" : false,
@@ -332,38 +314,24 @@ CORE = new Vue({
   },
   methods: {
     pass: function(item) {
-      if(item.available[0] != "All Columbia Schools") {
-        if(this.SEAS){
-          if(item.available.indexOf('Engineering') == -1){
-            return false;
-          }
-        }
-        if(this.GS){
-          if(item.available.indexOf('General School') == -1){
-            return false;
-          }
-        }
-        if(this.CC){
-          if(item.available.indexOf('College') == -1){
-            return false;
-          }
-        }
-        if(this.Barnard){
-          if(item.available.indexOf('Barnard') == -1){
-            return false;
-          }
-        }
+      if(this.all == true){
+        return true;
       }
 
-      if(this.accelerators == true && item.accelerator == true){
+      if(this.choice == 'accelerator' && item.accelerator == true){
         return true;
       }
-      if(this.funding == true && item.funding == true){
+      if(this.choice == 'funding' && item.funding == true){
         return true;
       }
-      if(this.mentorship == true && item.mentorship == true){
+      if(this.choice == 'mentorship' && item.mentorship == true){
         return true;
       }
+      if(this.choice == 'tools' && item.tools == true){
+        return true;
+      }
+
+
 
       return false;
     }
