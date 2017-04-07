@@ -1,25 +1,65 @@
 <script src="vue.js"></script>
 <link href="style.css" rel="stylesheet">
-<body style="background-color:#ddd;">
+<body style="background-color:white;">
 <section name="generic">
   <nav>
-    <a>Deadlines to Know</a>
-    <a>The Startup Vocabulary</a>
-    <a>Campus Founders</a>
-    <a>Recommended Reads</a>
-    <a>The "Columbia Portfolio"</a>
-    <a>By the Numbers</a>
+    <a href="vocab.html">The Startup Vocabulary</a>
+    <a href="founders.html">Campus Founders</a>
+    <a href="courses.html">Available Classes</a>
+    <a href="interactive.html">Campus Resources</a>
+    <a href="index.html">Home</a>
+
   </nav>
 </section>
 <div id="CORE">
 <section name="resources_info">
   <h1>Student Founders at Columbia</h1>
-  <p>This list of student founders sprawls many age groups and industries, with some companies still running and
-  others retired with their place in history. Some have graduated and are working on their venture full time.
-  Others are still taking classes at Columbia. Each is open to be reached over email if you have any questions for them,
-want to hear directly from a founder, or maybe want to do business with them. </p>
+  <p>Columbia entreprenuers operate in different industries. Interested in getting advice on your company?
+  Consider reaching out to one of the following students! </p>
 </section>
-<div class="powerbar">
+
+<section name="sara">
+  <div class="accolade">$25,000 Winner of the Columbia Venture <br>Competition #StartupColumbia track 2016</div>
+  <div class="sara">
+    <div class="pic"></div>
+    <div class="info">
+      <h1>Sara Sakowitz, Columbia College Class of 2018</h1>
+      <h2>Founder/CEO of Blue Moon Box and Partner at Dorm Room Fund</h2>
+      <p>Sara founded
+        <a href="http://www.bluemoonbox.com/">Blue Moon Box</a> in 2014, a subscription box product with
+        interactive science projects delivered straight to your door - every month!
+        Sara was recently named to Crains New York's 20 Under 20 List for BMB's success.
+
+        <br><br>Sara is an operating partner at Dorm Room Fund and was the President of
+        <a href="https://coreatcu.com">the Columbia Organization for Rising Entreprenuers</a> from 2016-2017.
+
+      </p>
+      <h3>Email Address: sarasakowitz@columbia.edu</h3>
+
+    </div>
+  </div>
+</section>
+
+<section name="mathew">
+  <div class="accolade">$25,000 Winner of the Columbia Venture <br>Competition Undergraduate track 2016</div>
+  <div class="info">
+    <h1>Mathew Pregasen, Columbia Engineering Class of 2018</h1>
+    <h2>Founder/CEO of Parsegon</h2>
+    <p>Mathew, with Anuke Ganegoda (Columbia '18) and Sahir Jaggi (Columbia '17), founded
+      <a href="https://www.parsegon.com/">Parsegon</a>, an
+      education technology company building tools for STEM teachers. With the first English to math algorithm,
+      it makes digital math extremely convinient and flexible for educators.
+
+      <br><br>Parsegon is funded by <a href="http://dormroomfund.com">Dorm Room Fund</a>
+       and <a href="http://roughdraft.vc">Rough Draft Ventures</a>.
+
+    </p>
+    <h3>Email Address: mathew@parsegon.com</h3>
+
+  </div>
+</section>
+
+<div class="powerbar" style="display:none;">
 
 
   <div class="block">
@@ -57,20 +97,25 @@ want to hear directly from a founder, or maybe want to do business with them. </
   </div>
 
 </div>
-<section name="resources">
-  <div class="all">
-    <div class="box lighter" v-if="pass(item)" v-for="item in items"
-    v-bind:style="{ backgroundImage: 'url(' + item.url + ')' }"
-    >
-      <h1>{{item.name}}</h1>
-      <p>{{item.description}} <span>Email</span></p>
-    </div>
 
-    <div style="opacity:.3;" class="box" v-if="!pass(item)" v-for="item in items"
-    v-bind:style="{ backgroundImage: 'url(' + item.url + ')' }"
-    >
+
+
+<section name="resources">
+  <h1>Featured Campus Founders</h1>
+  <div class="all">
+
+
+    <div class="etpr" v-for="item in items">
+
+    <div class="info">
       <h1>{{item.name}}</h1>
-      <p>{{item.description}} <span>Learn More</span></p>
+      <p>{{item.description}} <br> <a v-if="item.permalink" v-bind:href="item.permalink">{{item.link}}</a></p>
+
+    </div>
+    <div class="right">
+      <div class="grid" v-bind:style="{ backgroundImage: 'url(' + item.url + ')' }"></div>
+      <div class="grid" v-bind:style="{ backgroundImage: 'url(' + item.logo + ')' }"></div>
+    </div>
 
     </div>
 
@@ -98,39 +143,70 @@ CORE = new Vue({
     inaction: true,
     items: [
       {
-        "url" : "http://media.ellentv.com/2014/09/18/091814-google-aso-blog-1200x630.jpg",
+        "url" : "sara_main.jpg",
         "name" : "Sara Sakowitz",
         "description" : "CEO and Founder of Blue Moon Box",
         "available" : ["College"],
-        "inaction" : true
+        "inaction" : true,
+        "logo": "images/bluemoonbox.png",
+        "permalink" : "http://bluemoonbox.com",
+        "link" : "bluemoonbox.com",
+        "email" : "sarasakowitz@columbia.edu"
       },
       {
-        "url" : "https://dl.dropbox.com/s/yw5oiricj0n5iqg/20161203-demo_day_16-1138%20%281%29.jpg?dl=0",
-        "name" : "Mayur Saxena",
-        "description" : "CEO and Founder of Droice Labs",
-        "available" : ["Graduate"],
-        "inaction" : true
+        "url" : "images/momo.png",
+        "name" : "Mohammad Abedelmalik",
+        "description" : "CTO and Co-founder of Locasaur",
+        "available" : ["College"],
+        "inaction" : true,
+        "logo" : "images/loca.png",
+        "permalink" : "http://locasaur.com",
+        "link" : "locasaur.com",
+        "email" : "mohamed@locasaur.com"
       },
       {
         "url" : "simon.jpg",
         "name" : "Simon Schwartz",
         "description" : "CEO and Founder of Locasaur",
         "available" : ["College"],
-        "inaction" : true
+        "inaction" : true,
+        "logo" : "images/loca.png",
+        "permalink" : "http://locasaur.com",
+        "link" : "locasaur.com",
+        "email" : "simon@locasaur.com"
       },
       {
-        "url" : "mathew.png",
+        "url" : "images/mathew.jpg",
         "name" : "Mathew Pregasen",
         "description" : "CEO and Founder of Parsegon",
         "available" : ["SEAS"],
-        "inaction" : true
+        "inaction" : true,
+        "logo" : "images/parsegon.png",
+        "permalink" : "https://www.parsegon.com",
+        "link" : "parsegon.com",
+        "email" : "mathew@parsegon.com"
       },
       {
-        "url" : "mathew.png",
-        "name" : "Connor Lin",
-        "description" : "CEO and Founder of Parsegon",
+        "url" : "images/anuke.png",
+        "name" : "Anuke Ganegoda",
+        "description" : "COO and Co-Founder of Parsegon",
         "available" : ["SEAS"],
-        "inaction" : true
+        "inaction" : true,
+        "logo" : "images/parsegon.png",
+        "permalink" : "https://www.parsegon.com",
+        "link" : "parsegon.com",
+        "email" : "anuke@parsegon.com"
+      },
+      {
+        "url" : "images/sahir.png",
+        "name" : "Sahir Jaggi",
+        "description" : "Co-Founder of Parsegon",
+        "available" : ["SEAS"],
+        "inaction" : true,
+        "logo" : "images/parsegon.png",
+        "permalink" : "https://www.parsegon.com",
+        "link" : "parsegon.com",
+        "email" : "sahir@parsegon.com"
       }
 
     ]
