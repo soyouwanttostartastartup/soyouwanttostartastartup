@@ -395,7 +395,7 @@ section[name="options"] > a.option > h1{
 section[name="options"] > a.option > p{
   width:50%;
   margin-left:25%;
-  font-family: "Futura", "Sorts Mill Goudy", "Times";
+  font-family: "Futura", "Lato", "Sorts Mill Goudy", "Times";
   font-size:13px;
   text-align: center;
   text-decoration: none;
