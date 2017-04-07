@@ -455,14 +455,14 @@ section[name="resources_info"] > h1{
   font-size:25px;
   width:auto;
   display:inline-block;
-  font-family: "Futura", "Sorts Mill Goudy", "Times";
+  font-family: "Futura", "Lato", "Sorts Mill Goudy", "Times";
 }
 
 section[name="resources_info"] > p{
   width:60%;
   margin-left:20%;
   font-size:14px;
-  font-family: "Futura", "Sorts Mill Goudy", "Times";
+  font-family: "Futura", "Lato", "Sorts Mill Goudy", "Times";
   color:#888;
   text-align: left;
 }
@@ -478,7 +478,7 @@ div.powerbar{
   height:60px;
   background-color:white;
   border-top:1px #ddd solid;
-  font-family: "Futura", "Sorts Mill Goudy", "Times";
+  font-family: "Futura", "Lato", "Sorts Mill Goudy", "Times";
 }
 
 div.powerbar > .block{
