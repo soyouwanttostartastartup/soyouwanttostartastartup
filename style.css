@@ -35,27 +35,7 @@ section[name="main"]{
   display: inline-block;
 }
 
-section[name="main"] > nav{
-  width:100%;
-  right:0px;
-  top:0px;
-  position: absolute;
-  z-index:2;
-  color:white;
-  font-family: "Futura", "Lato";
-  font-size:11px;
-}
 
-section[name="main"] > nav > a{
-  color:white;
-  text-decoration: none;
-  float:right;
-  box-sizing: border-box;
-  display:inline-block;
-  margin:22px 1.125vw;
-  width:12vw;
-  text-align: center;
-}
 
 section[name="generic"]{
   width:100%;
@@ -67,7 +47,9 @@ section[name="generic"]{
   display: inline-block;
 }
 
-section[name="generic"] > nav{
+
+
+section > nav{
   width:100%;
   right:0px;
   top:0px;
@@ -78,15 +60,20 @@ section[name="generic"] > nav{
   font-size:11px;
 }
 
-section[name="generic"] > nav > a{
+section > nav > a{
   color:white;
   text-decoration: none;
   float:right;
   box-sizing: border-box;
   display:inline-block;
-  margin:22px 1.125vw;
-  width:12vw;
+  margin:22px 0px;
+  width:calc(100vw / 5);
   text-align: center;
+}
+
+section > nav > a.chosen{
+  opacity:.3;
+  cursor: default;
 }
 
 section[name="main"] > cite{
@@ -770,4 +757,70 @@ section[name="resources"] .etpr > .info > p{
   font-size:12px;
   font-family: "Futura", "Lato";
   padding:0px 15px;
+}
+
+section[name="new"]{
+  width:100%;
+  height:calc(100vh - 60px);
+  background-color:white;
+}
+
+section[name="new"] > div.banner{
+  font-family:"Permanent Marker", "Kumar One", "Nunito", Helvetica;
+  width:100%;
+  height:40vh;
+  text-align: center;
+  font-size:45px;
+  color:white;
+  padding:14vh 100px;
+  box-sizing: border-box;
+  background: #606c88;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+section[name="new"] > div.banner > div{
+  font-size:140px;
+  float:left;
+  display: inline-block;
+}
+
+section[name="new"] > a.triad:before{
+  position: absolute;
+  content: " ";
+  display: inline-block;
+  width:100%;
+  height:calc(60vh - 60px);
+  border: 30px white solid;
+  top:0px;
+  left:0px;
+  box-sizing: border-box;
+}
+
+section[name="new"] > a.triad{
+  float:left;
+  height:calc(60vh - 60px);
+  width:calc(100% / 3);
+  background: #2C3E50;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4CA1AF, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color:white;
+  text-align: center;
+  position: relative;
+  padding-top:22vh;
+  box-sizing:border-box;
+  font-family:"Permanent Marker", "Kumar One", "Nunito", Helvetica;
+  font-size:23px;
+}
+
+section[name="new"] > a.triad + .triad{
+  background: #FF5F6D;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+section[name="new"] > a.triad + .triad + .triad{
+  background: #BA5370;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F4E2D8, #BA5370);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F4E2D8, #BA5370); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
