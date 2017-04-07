@@ -425,10 +425,21 @@ section[name="courses"] > p{
   text-align: left;
 }
 
+
+section[name="courses"].funding > p{
+  width:50%;
+  margin-left:25%;
+  text-align: left;
+}
+
 section[name="courses"] > p > span{
   width:70px;
   color:#888;
   display: inline-block;
+}
+
+section[name="courses"].funding > p > span{
+  width:160px;
 }
 
 section[name="resources_info"]{
