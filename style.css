@@ -66,8 +66,9 @@ section > nav > a{
   float:right;
   box-sizing: border-box;
   display:inline-block;
-  margin:22px 0px;
+  margin:19px 0px;
   width:calc(100vw / 5);
+  font-size:14px;
   text-align: center;
 }
 
