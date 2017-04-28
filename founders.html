@@ -110,7 +110,7 @@
 
     <div class="info">
       <h1>{{item.name}}</h1>
-      <p>{{item.description}} <br> <a v-if="item.permalink" v-bind:href="item.permalink">{{item.link}}</a>
+      <p>{{item.description}} <br> <a target="_blank" v-if="item.permalink" v-bind:href="item.permalink">{{item.link}}</a>
         <br><br>
         <a href="mailto:{{{item.email}}}" target="_top">Email</a>
       </p>
@@ -156,7 +156,7 @@ CORE = new Vue({
         "logo": "images/bluemoonbox.png",
         "permalink" : "http://bluemoonbox.com",
         "link" : "bluemoonbox.com",
-        "email" : "sarasakowitz@columbia.edu"
+        "email" : "sara.sakowitz@columbia.edu"
       },
       {
         "url" : "simon.jpg",
@@ -169,17 +169,7 @@ CORE = new Vue({
         "link" : "locasaur.com",
         "email" : "simon@locasaur.com"
       },
-      {
-        "url" : "images/mathew.jpg",
-        "name" : "Mathew Pregasen",
-        "description" : "CEO and Founder of Parsegon",
-        "available" : ["SEAS"],
-        "inaction" : true,
-        "logo" : "images/parsegon.png",
-        "permalink" : "https://www.parsegon.com",
-        "link" : "parsegon.com",
-        "email" : "mathew@parsegon.com"
-      },
+
 
       {
         "url" : "images/momo.png",
@@ -190,7 +180,18 @@ CORE = new Vue({
         "logo" : "images/loca.png",
         "permalink" : "http://locasaur.com",
         "link" : "locasaur.com",
-        "email" : "mohamed@locasaur.com"
+        "email" : "mohammad@locasaur.com"
+      },
+      {
+        "url" : "images/mathew.jpg",
+        "name" : "Mathew Pregasen",
+        "description" : "CEO and Founder of Parsegon",
+        "available" : ["SEAS"],
+        "inaction" : true,
+        "logo" : "images/parsegon.png",
+        "permalink" : "https://www.parsegon.com",
+        "link" : "parsegon.com",
+        "email" : "mathew@parsegon.com"
       },
 
       {
@@ -225,6 +226,28 @@ CORE = new Vue({
         "permalink" : "http://www.useflutter.com/",
         "link" : "useflutter.com",
         "email" : "spencersyen@gmail.com"
+      },
+      {
+        "url" : "images/ian.png",
+        "name" : "Ian Huang",
+        "description" : "Founder of Collegewalk",
+        "available" : ["SEAS"],
+        "inaction" : true,
+        "logo" : "images/cw.png",
+        "permalink" : "http://www.collegewalk.co/",
+        "link" : "collegewalk.co",
+        "email" : "iyh2110@columbia.edu"
+      },
+      {
+        "url" : "images/george.png",
+        "name" : "George Liu",
+        "description" : "Founder of Palette",
+        "available" : ["CC"],
+        "inaction" : true,
+        "logo" : "images/palette.png",
+        "permalink" : "",
+        "link" : "",
+        "email" : "gliu@dormroomfund.com"
       }
 
     ]

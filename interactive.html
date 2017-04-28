@@ -45,8 +45,9 @@
 </div>
 <section name="resources">
   <div class="all">
-    <div class="box" v-if="pass(item)" v-for="item in items"
+    <a class="box" v-if="pass(item)" v-for="item in items"
     v-bind:style="{ backgroundImage: 'url(' + item.url + ')' }"
+    v-bind:href="item.link"
     >
       <h1>{{item.name}}</h1>
       <p>{{item.description}} <span>Learn More</span></p>
@@ -55,10 +56,11 @@
         <span v-if="item.money > 0" style="background-color:#ff6632;">${{item.money}}</span>
         <span v-if="item.credit > 0" style="background-color:lavender;">${{item.credit}} Credit</span>
       </div>
-    </div>
+    </a>
 
-    <div style="opacity:.3;" class="box" v-if="!pass(item)" v-for="item in items"
+    <a style="opacity:.3;" class="box" v-if="!pass(item)" v-for="item in items"
     v-bind:style="{ backgroundImage: 'url(' + item.url + ')' }"
+    v-bind:href="item.link"
     >
       <h1>{{item.name}}</h1>
       <p>{{item.description}} <span>Learn More</span></p>
@@ -67,7 +69,7 @@
         <span v-if="item.money > 0" style="background-color:#ff6632;">${{item.money}}</span>
         <span v-if="item.credit > 0" style="background-color:lavender;">${{item.credit}} Credit</span>
       </div>
-    </div>
+    </a>
 
 
 
@@ -95,7 +97,8 @@ CORE = new Vue({
         "funding" : true,
         "mentorship" : false,
         "money" : 25000,
-        "tools" : false
+        "tools" : false,
+        "link" : "http://www.lusolabs.co"
       },
       {
         "url" : "images/almaworks.png",
@@ -106,7 +109,8 @@ CORE = new Vue({
         "funding" : false,
         "mentorship" : false,
         "money" : 0,
-        "tools" : true
+        "tools" : true,
+        "link" : "http://alma.works"
       },
       {
         "url" : "images/rocket.png",
@@ -117,7 +121,8 @@ CORE = new Vue({
         "funding" : true,
         "mentorship" : false,
         "money" : 50000,
-        "tools" : false
+        "tools" : false,
+        "link" : "http://engineering.columbia.edu/venture-funding"
       },
       {
         "url" : "images/rocket.png",
@@ -128,7 +133,8 @@ CORE = new Vue({
         "funding" : true,
         "mentorship" : false,
         "money" : 15000,
-        "tools" : false
+        "tools" : false,
+        "link" : "https://www.college.columbia.edu/news/columbia-entrepreneurship-announces-innovation-grants-columbia-college-and-school-general"
       },
       {
         "url" : "http://engineering.columbia.edu/files/engineering/tunisia-entrepreneurship.png",
@@ -139,7 +145,8 @@ CORE = new Vue({
         "funding" : false,
         "mentorship" : true,
         "money" : 0,
-        "tools" : true
+        "tools" : true,
+        "link" : "https://www8.gsb.columbia.edu/entrepreneurship/innovation/"
       },
       {
         "url" : "https://dl.dropbox.com/s/48ufwmvwbk8h6f2/10506590_812972225433045_1955344794775040458_o.jpg?dl=0",
@@ -150,7 +157,8 @@ CORE = new Vue({
         "funding" : false,
         "mentorship" : false,
         "money" : 0,
-        "tools" : true
+        "tools" : true,
+        "link" : "mailto:coreboard@columbia.edu?Subject=CORE%20Focus"
       },
       {
         "url" : "http://engineering.columbia.edu/files/engineering/tunisia-entrepreneurship.png",
@@ -161,7 +169,8 @@ CORE = new Vue({
         "funding" : true,
         "mentorship" : true,
         "money" : 20000,
-        "tools" : true
+        "tools" : true,
+        "link" : "http://entrepreneurship.columbia.edu/resource/dorm-room-fund/"
       },
       {
         "url" : "images/rdv.jpg",
@@ -173,7 +182,8 @@ CORE = new Vue({
         "mentorship" : true,
         "money" : 25000,
         "tools" : true,
-        "credit" : 100000
+        "credit" : 100000,
+        "link" : "http://www.roughdraft.vc/"
 
       },
       {
@@ -185,7 +195,8 @@ CORE = new Vue({
         "funding" : false,
         "mentorship" : true,
         "money" : 0,
-        "tools" : true
+        "tools" : true,
+        "link" : "https://www.cc-seas.columbia.edu/reslife/fya/llc/resinc.php"
       },
       {
         "url" : "https://i.vimeocdn.com/video/491383374.jpg?mw=1920&mh=1080&q=70",
@@ -196,7 +207,8 @@ CORE = new Vue({
         "funding" : false,
         "mentorship" : false,
         "money" : 0,
-        "tools" : true
+        "tools" : true,
+        "link" : "http://entrepreneurship.columbia.edu/startup-lab/"
       },
       {
         "url" : "http://www.incimages.com/uploaded_files/image/970x450/SteveBlank_IdeaLab_2_Pano_40031.jpg",
@@ -207,7 +219,8 @@ CORE = new Vue({
         "funding" : false,
         "mentorship" : true,
         "money" : 0,
-        "tools" : true
+        "tools" : true,
+        "link" : "https://www8.gsb.columbia.edu/courses/mba/2015/spring/b8521-001"
       },
       {
         "url" : "https://www.nycedc.com/sites/default/files/filemanager/Blog/Harlem_Biospace/Hb-blog.jpg",
@@ -218,7 +231,8 @@ CORE = new Vue({
         "funding" : false,
         "mentorship" : false,
         "money" : 0,
-        "tools" : true
+        "tools" : true,
+        "link" : "http://harlembiospace.com/"
       },
       {
         "url" : "https://static1.squarespace.com/static/54451b15e4b0cf00d1a77918/t/5588310de4b04e63446509e4/1436200782248/?format=1500w",
@@ -229,7 +243,8 @@ CORE = new Vue({
         "funding" : true,
         "mentorship" : true,
         "money" : 190000,
-        "tools" : true
+        "tools" : true,
+        "link" : "http://www.columbia-coulter.com/"
       },
       {
         "url" : "https://tctechcrunch2011.files.wordpress.com/2016/08/2team_techcrunch.png",
@@ -240,7 +255,8 @@ CORE = new Vue({
         "funding" : true,
         "mentorship" : true,
         "money" : 40000,
-        "tools" : true
+        "tools" : true,
+        "link" : "https://www.pear.vc/"
       },
       {
         "url" : "https://tctechcrunch2011.files.wordpress.com/2016/08/2team_techcrunch.png",
@@ -251,7 +267,8 @@ CORE = new Vue({
         "funding" : true,
         "mentorship" : true,
         "money" : 60000,
-        "tools" : true
+        "tools" : true,
+        "link" : "http://lsvp.com/summer-fellowships/"
       },
       {
         "url" : "https://tctechcrunch2011.files.wordpress.com/2016/08/2team_techcrunch.png",
@@ -262,7 +279,8 @@ CORE = new Vue({
         "funding" : true,
         "mentorship" : true,
         "money" : 60000,
-        "tools" : true
+        "tools" : true,
+        "link" : "http://summer.hcp.com/"
       },
       {
         "url" : "https://pbs.twimg.com/media/CTftHFsWwAAcgE6.jpg",
@@ -273,7 +291,8 @@ CORE = new Vue({
         "funding" : false,
         "mentorship" : false,
         "money" : 0,
-        "tools" : true
+        "tools" : true,
+        "link" : "http://make.columbia.edu/"
       },
       {
         "url" : "http://www8.gsb.columbia.edu/entrepreneurship/sites/entrepreneurship/files/images/columbiaDesignStudio.jpg",
@@ -284,7 +303,8 @@ CORE = new Vue({
         "funding" : false,
         "mentorship" : true,
         "money" : 0,
-        "tools" : true
+        "tools" : true,
+        "link" : "http://entrepreneurship.columbia.edu/resources/design-studio-columbia-entrepreneurship/"
       },
       {
         "url" : "http://entrepreneurship.columbia.edu/wp-content/uploads/2013/07/tech2.png",
@@ -295,7 +315,8 @@ CORE = new Vue({
         "funding" : false,
         "mentorship" : true,
         "money" : 0,
-        "tools" : false
+        "tools" : false,
+        "link" : "http://techventures.columbia.edu/ctv-executive-advisors-network"
       },
       {
         "url" : "http://entrepreneurship.columbia.edu/wp-content/uploads/2013/07/tech2.png",
@@ -306,7 +327,8 @@ CORE = new Vue({
         "funding" : false,
         "mentorship" : true,
         "money" : 0,
-        "tools" : false
+        "tools" : false,
+        "link" : "http://techventures.columbia.edu/about-ctv/ctv-executives-residence"
       },
       {
         "url" : "http://engineering.columbia.edu/files/engineering/fastpitch2014-425.jpg",
@@ -317,7 +339,8 @@ CORE = new Vue({
         "funding" : true,
         "mentorship" : false,
         "money" : 2000,
-        "tools" : false
+        "tools" : false,
+        "link" : "http://entrepreneurship.engineering.columbia.edu/fast-pitch.html"
       },
       {
         "url" : "https://d0.awsstatic.com/video-thumbs/dynamodb/AWS-online-games-wide.png",
@@ -329,7 +352,8 @@ CORE = new Vue({
         "mentorship" : false,
         "money" : 0,
         "credit" : 1000,
-        "tools" : true
+        "tools" : true,
+        "link" : "http://entrepreneurship.engineering.columbia.edu/amazon-activate.html"
       }
 
 
